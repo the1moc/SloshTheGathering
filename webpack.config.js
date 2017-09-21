@@ -33,6 +33,7 @@ module.exports = {
     module: {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+            { test: /assets(\/|\\)/, loader: 'file-loader?name=assets/[name].[ext]' },
             { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
             { test: /pixi\.js$/, loader: 'expose-loader?PIXI' },
             { test: /phaser-split\.js$/, loader: 'expose-loader?Phaser' },
