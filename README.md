@@ -1,6 +1,8 @@
 # VicTheGathering
 MTG inspired card game
 
+Current phase - https://the1moc.github.io/SloshTheGathering/
+
 -- Created initially 29th July
 
 Initial Plan
@@ -16,13 +18,13 @@ Client - Game Framework after study (Phaser?) + TypeScript
 
 [x] - Get reacquinated with TS
 
-[ ] - Get reacquainted with Phaser 
+[x] - Get reacquainted with Phaser 
 
-[ ] - Create card list
+[-] - Create card list
 
-[ ] - Design menu
+[-] - Design menu
 
-[ ] - Implement menu
+- ] - Implement menu
 
 [ ] - Design active play area + player views
 
