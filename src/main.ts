@@ -1,23 +1,16 @@
 import "p2";
 import "phaser";
 import "pixi";
+import Boot from "./states/boot";
+import Preload from "./states/preload";
 
 class Game extends Phaser.Game{
 
-    protected game: Phaser.Game;
-
-
-    constructor(config: Phaser.IGameConfig) {
-        super(config);
-        this.game = new Phaser.Game(800, 600, Phaser.AUTO, "game", { preload: this.preload, create: this.create });
-    }
-
-    public preload() {
-
-    }
-
-   public create() {
-
+    constructor() {
+        super(1600, 900, Phaser.AUTO, "game");
+        this.state.add("boot", Boot);
+        this.state.add("preload", Preload);
+        this.state.start("boot");
     }
 
 }

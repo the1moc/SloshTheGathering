@@ -3,10 +3,11 @@ var webpack = require("webpack");
 
 var phaserPath = path.join(__dirname, "/node_modules/phaser-ce/");
 var phaser = path.join(phaserPath, "build/custom/phaser-split.js");
-var pixi = path.join(phaserPath, 'build/custom/pixi.js');
-var p2 = path.join(phaserPath, 'build/custom/p2.js');
+var pixi = path.join(phaserPath, "build/custom/pixi.js");
+var p2 = path.join(phaserPath, "build/custom/p2.js");
+var assets = path.join(__dirname, "assets/");
 
-module.exports = {
+    module.exports = {
     entry: {
         app: "./src/main.ts",
         vendor: ["pixi", "p2", "phaser"]
@@ -26,15 +27,15 @@ module.exports = {
         alias: {
             pixi: pixi,
             phaser: phaser,
-            p2: p2
+            p2: p2,
+            assets: assets
         }
     },
 
     module: {
         rules: [
-            // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             { test: /assets(\/|\\)/, loader: 'file-loader?name=assets/[name].[ext]' },
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+            { test: /\.ts?$/, loader: "awesome-typescript-loader" },
             { test: /pixi\.js$/, loader: 'expose-loader?PIXI' },
             { test: /phaser-split\.js$/, loader: 'expose-loader?Phaser' },
             { test: /p2\.js$/, loader: 'expose-loader?p2' },
