@@ -1,5 +1,6 @@
-# VicTheGathering
-MTG inspired card game
+# SloshTheGathering
+MTG inspired card game based on friends and school
+Yes I have too much spare time
 
 Current phase - https://the1moc.github.io/SloshTheGathering/
 
