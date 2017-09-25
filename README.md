@@ -16,6 +16,13 @@ Updated
 Server - Happstack
 Client - Game Framework after study (Phaser?) + TypeScript
 
+-- Update September 25th
+
+FINAL PLAN: 
+# Server - Node + socket.io
+
+# Client - TypeScript + phaser.js
+
 
 [x] - Get reacquainted with build tings etc
 
