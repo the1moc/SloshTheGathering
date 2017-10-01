@@ -140,7 +140,7 @@ module.exports = __webpack_require__.p + "assets/play_button.png";
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/dark_fallout.ogg";
+module.exports = __webpack_require__.p + "assets/menu_music.mp3";
 
 /***/ }),
 /* 15 */
