@@ -24,7 +24,7 @@ __webpack_require__(0);
 __webpack_require__(2);
 var boot_1 = __webpack_require__(9);
 var preload_1 = __webpack_require__(10);
-var menu_1 = __webpack_require__(16);
+var menu_1 = __webpack_require__(17);
 var Game = /** @class */ (function (_super) {
     __extends(Game, _super);
     function Game() {
@@ -109,6 +109,7 @@ var Preload = /** @class */ (function (_super) {
         this.game.load.image("play_button", __webpack_require__(13));
         this.game.load.audio("menu_music", __webpack_require__(14));
         this.game.load.image("menu_logo", __webpack_require__(15));
+        this.game.load.audio("play_button_press", __webpack_require__(16));
     };
     Preload.prototype.create = function () {
         this.game.state.start("menu");
@@ -152,6 +153,12 @@ module.exports = __webpack_require__.p + "assets/menu_logo.png";
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__.p + "assets/play_button.mp3";
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 var __extends = (this && this.__extends) || (function () {
@@ -168,7 +175,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(1);
 __webpack_require__(0);
 __webpack_require__(2);
-var globals_1 = __webpack_require__(17);
+var globals_1 = __webpack_require__(18);
 var Menu = /** @class */ (function (_super) {
     __extends(Menu, _super);
     function Menu() {
@@ -176,12 +183,16 @@ var Menu = /** @class */ (function (_super) {
     }
     Menu.prototype.create = function () {
         var menuBackground = this.game.add.image(0, 0, "menu_background");
-        menuBackground.height = globals_1.Global.GAME_HEIGHT;
-        menuBackground.width = globals_1.Global.GAME_WIDTH;
         var menuTitle = this.game.add.image(100, 100, "menu_title");
         var menuLogo = this.game.add.image(1100, 100, "menu_logo");
-        var playButton = this.game.add.button(100, 450, "play_button");
+        menuBackground.height = globals_1.Global.GAME_HEIGHT;
+        menuBackground.width = globals_1.Global.GAME_WIDTH;
+        var playButtonMusic = this.game.add.audio("play_button_press");
+        var playButton = this.game.add.button(100, 450, "play_button", function () {
+            playButtonMusic.play();
+        });
         var music = this.game.add.audio("menu_music");
+        music.volume = 0.3;
         music.play();
     };
     return Menu;
@@ -190,7 +201,7 @@ exports.default = Menu;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
