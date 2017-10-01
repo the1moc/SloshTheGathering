@@ -176,24 +176,31 @@ __webpack_require__(1);
 __webpack_require__(0);
 __webpack_require__(2);
 var globals_1 = __webpack_require__(18);
+// State - The main menu for the game
 var Menu = /** @class */ (function (_super) {
     __extends(Menu, _super);
     function Menu() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Menu.prototype.create = function () {
-        var menuBackground = this.game.add.image(0, 0, "menu_background");
-        var menuTitle = this.game.add.image(100, 100, "menu_title");
-        var menuLogo = this.game.add.image(1100, 100, "menu_logo");
-        menuBackground.height = globals_1.Global.GAME_HEIGHT;
-        menuBackground.width = globals_1.Global.GAME_WIDTH;
-        var playButtonMusic = this.game.add.audio("play_button_press");
-        var playButton = this.game.add.button(100, 450, "play_button", function () {
-            playButtonMusic.play();
+        var _this = this;
+        this.menuBackground = this.game.add.image(0, 0, "menu_background");
+        this.menuTitle = this.game.add.image(100, 100, "menu_title");
+        this.menuLogo = this.game.add.image(1100, 100, "menu_logo");
+        this.menuBackground.height = globals_1.Global.GAME_HEIGHT;
+        this.menuBackground.width = globals_1.Global.GAME_WIDTH;
+        this.playButtonMusic = this.game.add.audio("play_button_press");
+        // Play button with callback
+        this.game.add.button(100, 450, "play_button", function () {
+            _this.playButtonMusic.play();
         });
-        var music = this.game.add.audio("menu_music");
-        music.volume = 0.3;
-        music.play();
+        this.menuMusic = this.game.add.audio("menu_music");
+        this.playMenuMusic();
+    };
+    // Play the menu music
+    Menu.prototype.playMenuMusic = function () {
+        this.menuMusic.volume = 0.3;
+        this.menuMusic.play();
     };
     return Menu;
 }(Phaser.State));
